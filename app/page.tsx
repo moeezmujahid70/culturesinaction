@@ -1,15 +1,13 @@
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
+import { Nav } from "@/components/nav";
 
-const navLinks = [
-  { href: "#kickstart", label: "Kickstart" },
-  { href: "#what", label: "What Is a COS" },
-  { href: "#arc", label: "Wellbeing Arc" },
-  { href: "#founder", label: "Founder" },
-  {
-    href: "https://www.culturequestsoftware.net",
-    label: "Software",
-    external: true,
-  },
+const newsletterSpecs = [
+  "Free, one-hour Zoom session",
+  "Capped at 10 participants per session",
+  "Participants drawn from different roles, industries, and experience levels",
+  "No keynotes, slide decks, vendor pitches, or recordings",
+  "Facilitated — not hosted — with a single opening question",
+  "Low-commitment participation, opt-out at any time",
 ];
 
 const kickstartCards = [
@@ -106,38 +104,7 @@ const timeline = [
 export default function Home() {
   return (
     <main className="cia-page">
-      <nav className="cia-nav" aria-label="Primary">
-        <div className="cia-shell cia-nav__inner">
-          <a className="cia-nav__brand" href="#top">
-            Cultures in Action
-          </a>
-          <div className="cia-nav__links">
-            {navLinks.map((link) => (
-              <LiquidButton
-                asChild
-                className="cia-liquid-button cia-liquid-button--nav"
-                key={link.href}
-                size="sm"
-              >
-                <a
-                  href={link.href}
-                  rel={link.external ? "noreferrer" : undefined}
-                  target={link.external ? "_blank" : undefined}
-                >
-                  {link.label}
-                </a>
-              </LiquidButton>
-            ))}
-            <LiquidButton
-              asChild
-              className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--nav-strong"
-              size="sm"
-            >
-              <a href="#action">Get Started</a>
-            </LiquidButton>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
       <header className="cia-hero" id="top">
         <div className="cia-shell cia-hero__grid">
@@ -351,6 +318,64 @@ export default function Home() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="cia-section" id="newsletter">
+        <div className="cia-shell">
+          <div className="cia-newsletter">
+            <div className="cia-stack">
+              <p className="cia-eyebrow">Zoom: Culture Breaks</p>
+              <h2>Real Talk With People Who Get It</h2>
+              <p className="cia-body-lg">
+                Our newsletter, <em>Zoom: Culture Breaks</em>, is a free,
+                informal one-hour Zoom conversation with culture management
+                professionals. These small-group sessions are designed to fill
+                a gap that most conferences and webinars can&apos;t — genuine,
+                candid peer conversation.
+              </p>
+              <p>
+                A facilitator opens with a single question and lets themes
+                emerge naturally. There are no keynotes, no slide decks, no
+                vendor pitches, and no recordings. Most professional forums are
+                too formal or too polished for real talk. This is a space where
+                the goal isn&apos;t to impress anyone — it&apos;s to think out
+                loud with people who get it.
+              </p>
+
+              <blockquote className="cia-newsletter__opening-q">
+                &ldquo;What&apos;s something you&apos;re seeing right now that
+                surprised you, that you just learned, or that&apos;s
+                challenging you?&rdquo;
+                <cite>Opening question, every session</cite>
+              </blockquote>
+
+              <div className="cia-newsletter__rule">
+                <strong>The one firm rule</strong>
+                What&apos;s said in the room stays in the room.
+              </div>
+
+              <LiquidButton
+                asChild
+                className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--newsletter-cta"
+              >
+                <a href="mailto:jerry.wagner@culturesinaction.net?subject=Zoom%3A%20Culture%20Breaks%20%E2%80%94%20Request%20an%20Invitation">
+                  Request an Invitation
+                </a>
+              </LiquidButton>
+            </div>
+
+            <aside className="cia-newsletter__specs">
+              <p className="cia-card__eyebrow">Format &amp; Format Rules</p>
+              <ul className="cia-newsletter__specs-list">
+                {newsletterSpecs.map((spec) => (
+                  <li className="cia-newsletter__spec-item" key={spec}>
+                    {spec}
+                  </li>
+                ))}
+              </ul>
+            </aside>
           </div>
         </div>
       </section>

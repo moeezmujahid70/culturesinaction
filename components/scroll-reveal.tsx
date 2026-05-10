@@ -7,6 +7,7 @@ const revealSelectors = [
   ".cia-section__intro",
   ".cia-statement .cia-shell",
   ".cia-two-column > *",
+  ".cia-newsletter > *",
   ".cia-card",
   ".cia-panel",
   ".cia-quote-band",
@@ -42,9 +43,15 @@ export function ScrollReveal() {
     elements.forEach((element, index) => {
       element.classList.add("cia-reveal");
 
-      if (element.matches(".cia-two-column > :first-child")) {
+      if (
+        element.matches(".cia-two-column > :first-child") ||
+        element.matches(".cia-newsletter > :first-child")
+      ) {
         element.dataset.revealVariant = "left";
-      } else if (element.matches(".cia-two-column > :last-child")) {
+      } else if (
+        element.matches(".cia-two-column > :last-child") ||
+        element.matches(".cia-newsletter > :last-child")
+      ) {
         element.dataset.revealVariant = "right";
       }
 
@@ -53,7 +60,7 @@ export function ScrollReveal() {
           ".cia-card, .cia-component, .cia-square-list li, .cia-timeline__row",
         )
       ) {
-        element.style.setProperty("--reveal-delay", `${(index % 4) * 70}ms`);
+        element.style.setProperty("--reveal-delay", `${(index % 5) * 110}ms`);
       }
     });
 
@@ -69,8 +76,8 @@ export function ScrollReveal() {
         });
       },
       {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.12,
+        rootMargin: "0px 0px -6% 0px",
+        threshold: 0.07,
       },
     );
 
