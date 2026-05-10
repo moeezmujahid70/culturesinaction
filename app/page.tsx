@@ -1,15 +1,27 @@
-import Image from "next/image";
+import { LiquidButton } from "@/components/ui/liquid-glass-button";
+
+const navLinks = [
+  { href: "#kickstart", label: "Kickstart" },
+  { href: "#what", label: "What Is a COS" },
+  { href: "#arc", label: "Wellbeing Arc" },
+  { href: "#founder", label: "Founder" },
+  {
+    href: "https://www.culturequestsoftware.net",
+    label: "Software",
+    external: true,
+  },
+];
 
 const kickstartCards = [
   {
     number: "01",
     title: "Build It Together",
-    body: "The team designs its own COS — decision principles, behavioral expectations, accountability structures — through a guided, facilitated process that surfaces real consensus.",
+    body: "The team designs its own COS, including decision principles, behavioral expectations, and accountability structures, through a guided, facilitated process that surfaces real consensus.",
   },
   {
     number: "02",
     title: "Share It Openly",
-    body: "The finished COS lives in Culture Quest Software — visible to every member, available to leadership, and ready to serve as a shared reference point.",
+    body: "The finished COS lives in Culture Quest Software, visible to every member, available to leadership, and ready to serve as a shared reference point.",
   },
   {
     number: "03",
@@ -19,10 +31,10 @@ const kickstartCards = [
 ];
 
 const teamFit = [
-  "Any size — from a two-person project team to a large division",
-  "Any function — operations, sales, clinical, engineering, administrative",
-  "Any level — front-line teams, middle management, executive leadership",
-  "Any starting point — regardless of prior culture work history",
+  "Any size, from a two-person project team to a large division",
+  "Any function, including operations, sales, clinical, engineering, and administrative",
+  "Any level, from front-line teams to middle management and executive leadership",
+  "Any starting point, regardless of prior culture work history",
 ];
 
 const cosQuestions = [
@@ -65,7 +77,7 @@ const timeline = [
     years: "2010",
     label: "Gallup Foundation",
     title: "The Wellbeing Research",
-    body: "Landmark research identified five interconnected domains — Career, Social, Financial, Physical, and Community. Organizations began to see wellbeing as a design problem, not just an HR benefit.",
+    body: "Landmark research identified five interconnected domains: Career, Social, Financial, Physical, and Community. Organizations began to see wellbeing as a design problem, not just an HR benefit.",
   },
   {
     years: "2013–2019",
@@ -94,26 +106,35 @@ const timeline = [
 export default function Home() {
   return (
     <main className="cia-page">
-      <nav className="cia-nav">
+      <nav className="cia-nav" aria-label="Primary">
         <div className="cia-shell cia-nav__inner">
           <a className="cia-nav__brand" href="#top">
             Cultures in Action
           </a>
-          <div className="cia-nav__links" aria-label="Primary">
-            <a href="#kickstart">Kickstart</a>
-            <a href="#what">What Is a COS</a>
-            <a href="#arc">Wellbeing Arc</a>
-            <a href="#founder">Founder</a>
-            <a
-              href="https://www.culturequestsoftware.net"
-              target="_blank"
-              rel="noreferrer"
+          <div className="cia-nav__links">
+            {navLinks.map((link) => (
+              <LiquidButton
+                asChild
+                className="cia-liquid-button cia-liquid-button--nav"
+                key={link.href}
+                size="sm"
+              >
+                <a
+                  href={link.href}
+                  rel={link.external ? "noreferrer" : undefined}
+                  target={link.external ? "_blank" : undefined}
+                >
+                  {link.label}
+                </a>
+              </LiquidButton>
+            ))}
+            <LiquidButton
+              asChild
+              className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--nav-strong"
+              size="sm"
             >
-              Software
-            </a>
-            <a className="cia-button cia-button--small" href="#action">
-              Get Started
-            </a>
+              <a href="#action">Get Started</a>
+            </LiquidButton>
           </div>
         </div>
       </nav>
@@ -127,19 +148,15 @@ export default function Home() {
               Most organizations have values. Few have the systems to make
               those values a workplace reality.
             </p>
-            <a className="cia-button cia-button--ghost" href="#kickstart">
-              Explore the Kickstart
-            </a>
+            <LiquidButton
+              asChild
+              className="cia-liquid-button cia-liquid-button--hero"
+              size="xl"
+            >
+              <a href="#kickstart">Explore the Kickstart</a>
+            </LiquidButton>
           </div>
-          <div className="cia-hero__media" aria-hidden="true">
-            <Image
-              src="/culture-precision-hero.jpg"
-              alt=""
-              fill
-              priority
-              sizes="(max-width: 1023px) 0vw, 38vw"
-            />
-          </div>
+          <div className="cia-hero__media" aria-hidden="true" />
         </div>
       </header>
 
@@ -151,18 +168,18 @@ export default function Home() {
               <blockquote>
                 &ldquo;For decades, my work has been driven by a single
                 conviction:
-                it should be possible — even simple — to design a workplace
+                it should be possible, even simple, to design a workplace
                 culture that employees actually want to be part of.&rdquo;
               </blockquote>
               <p>
-                I have approached this challenge from multiple vantage points —
+                I have approached this challenge from multiple vantage points,
                 as a university department head, a corporate president, an
                 entrepreneur, and a Senior Scientist at Gallup. Each role
                 reinforced the same lesson: culture is not a vague concept. It
                 is a system to be operated. The goal of this work is to make
                 that system visible and actionable.
               </p>
-              <p className="cia-founder__name">— Jerry</p>
+              <p className="cia-founder__name">Jerry</p>
             </div>
           </div>
         </div>
@@ -175,7 +192,7 @@ export default function Home() {
             <h2>A Culture Worth Belonging To</h2>
             <p className="cia-body-lg">
               At Cultures in Action, we believe that culture is not an
-              invisible or unmanageable force — instead, it is a system
+              invisible or unmanageable force. Instead, it is a system
               infrastructure to be designed, operated, and improved.
             </p>
             <p>
@@ -188,7 +205,7 @@ export default function Home() {
               Our goal: every team should have its own Culture Operating System.
               Not values written in a planning retreat and forgotten by Friday.
               An explicit, owned blueprint for how the team actually intends to
-              function — how decisions are made, how people are expected to
+              function: how decisions are made, how people are expected to
               behave, and how the team gets better over time.
             </p>
           </div>
@@ -210,7 +227,7 @@ export default function Home() {
             <p className="cia-eyebrow">The Culture Quest Kickstart</p>
             <h2>Where Every Team Begins</h2>
             <p className="cia-body-lg cia-intro-copy">
-              Most culture initiatives stall before they start — because they
+              Most culture initiatives stall before they start because they
               belong to HR, not to the team. The Kickstart changes that. It is
               a structured, facilitated experience that puts every team in the
               designer&apos;s seat.
@@ -229,7 +246,7 @@ export default function Home() {
 
           <div className="cia-panel">
             <p className="cia-panel__eyebrow">
-              Built for Every Team — No Exceptions
+              Built for Every Team, No Exceptions
             </p>
             <div className="cia-grid cia-grid--four">
               {teamFit.map((item) => (
@@ -242,7 +259,7 @@ export default function Home() {
             <span />
             <p>
               &ldquo;The Kickstart is invigorating precisely because it is
-              theirs. The team does not receive a culture — it builds
+              theirs. The team does not receive a culture. It builds
               one.&rdquo;
             </p>
             <span />
@@ -310,7 +327,7 @@ export default function Home() {
             <h2>The Organizational Wellbeing Arc</h2>
             <p className="cia-body-lg">
               The path to the Culture Operating System runs through two decades
-              of research—and the slow, expensive recognition that programs
+              of research, and the slow, expensive recognition that programs
               alone cannot fix a broken culture.
             </p>
           </div>
@@ -349,20 +366,28 @@ export default function Home() {
             </p>
           </div>
           <div className="cia-actions">
-            <a
-              className="cia-button"
-              href="https://www.culturequestsoftware.net"
-              target="_blank"
-              rel="noreferrer"
+            <LiquidButton
+              asChild
+              className="cia-liquid-button cia-liquid-button--dark"
+              size="xl"
             >
-              Explore Culture Quest Software
-            </a>
-            <a
-              className="cia-button cia-button--secondary"
-              href="mailto:jerry.wagner@culturesinaction.net"
+              <a
+                href="https://www.culturequestsoftware.net"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Explore Culture Quest Software
+              </a>
+            </LiquidButton>
+            <LiquidButton
+              asChild
+              className="cia-liquid-button cia-liquid-button--dark cia-liquid-button--dark-secondary"
+              size="xl"
             >
-              Contact Jerry Wagner
-            </a>
+              <a href="mailto:jerry.wagner@culturesinaction.net">
+                Contact Jerry Wagner
+              </a>
+            </LiquidButton>
           </div>
           <p className="cia-contact-line">
             JERRY.WAGNER@CULTURESINACTION.NET · CULTURESINACTION.NET
