@@ -577,6 +577,137 @@ img {
   max-width: 42rem;
 }
 
+.cia-kickstart-program {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(22rem, 0.72fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+.cia-kickstart-main {
+  min-width: 0;
+}
+
+.cia-kickstart-side {
+  display: grid;
+  gap: 1.5rem;
+  min-width: 0;
+  padding-top: 4.3rem;
+}
+
+.cia-kickstart-program h2 {
+  max-width: 12ch;
+  margin: 0;
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(2.15rem, 5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.cia-kickstart-program h2 span {
+  color: var(--primary);
+}
+
+.cia-kickstart-main > .cia-body-lg {
+  max-width: 46rem;
+  margin: 1.5rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+.cia-kickstart-steps {
+  margin-top: 2.5rem;
+}
+
+.cia-kickstart-steps h3 {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.35rem;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.cia-kickstart-steps ol {
+  display: grid;
+  gap: 1.1rem;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cia-kickstart-steps li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.cia-kickstart-steps li > span {
+  color: var(--primary);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: right;
+}
+
+.cia-kickstart-steps strong {
+  display: block;
+  color: var(--text);
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.cia-kickstart-steps p {
+  margin: 0.15rem 0 0;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+.cia-kickstart-investment {
+  border: 1px solid var(--border-strong);
+  border-top: 3px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--surface-tint);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.cia-kickstart-investment p {
+  margin: 0 0 0.65rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.cia-kickstart-investment strong {
+  display: block;
+  color: var(--primary);
+  font-size: clamp(3rem, 7vw, 4.5rem);
+  line-height: 0.95;
+}
+
+.cia-kickstart-investment span {
+  display: block;
+  margin-top: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.cia-kickstart-tagline {
+  margin: 0;
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+  color: var(--text-muted);
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  text-align: left;
+}
+
+.cia-kickstart-tagline strong {
+  color: var(--text);
+}
+
 .cia-two-column {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
@@ -723,6 +854,31 @@ img {
 .cia-panel:hover::after {
   opacity: 1;
   transform: translateX(0);
+}
+
+.cia-panel--kickstart {
+  background: var(--surface-tint);
+}
+
+.cia-panel--kickstart:hover {
+  background: #f8f3f1;
+  box-shadow: 0 10px 24px rgb(65 0 2 / 0.08);
+}
+
+.cia-kickstart-fit-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.cia-kickstart-fit-list p {
+  margin: 0;
+  border-top: 1px solid rgb(107 20 20 / 0.14);
+  padding-top: 1rem;
+}
+
+.cia-kickstart-fit-list p:first-child {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .cia-panel__eyebrow,
@@ -956,48 +1112,38 @@ img {
 }
 
 .cia-liquid-button {
-  border: 1px solid rgb(255 255 255 / 0.5);
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.38), rgb(255 255 255 / 0.12)),
-    rgb(255 255 255 / 0.12);
-  color: var(--primary);
-  box-shadow:
-    0 16px 34px rgb(65 0 2 / 0.12),
-    inset 0 1px 0 rgb(255 255 255 / 0.62),
-    inset 0 -1px 0 rgb(65 0 2 / 0.08);
-  backdrop-filter: blur(18px) saturate(160%);
-  -webkit-backdrop-filter: blur(18px) saturate(160%);
-  transition: transform var(--motion-medium) var(--ease-emphasis), color var(--motion-fast) var(--ease-standard), filter var(--motion-fast) var(--ease-standard), box-shadow var(--motion-medium) var(--ease-standard);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius);
+  background: var(--primary);
+  color: white;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: 0 8px 18px rgb(65 0 2 / 0.1);
+  transition: transform var(--motion-fast) var(--ease-emphasis), background-color var(--motion-fast) var(--ease-standard), border-color var(--motion-fast) var(--ease-standard), color var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard);
 }
 
 .cia-liquid-button:hover {
-  transform: translateY(-2px) scale(1.015);
-  color: var(--primary-strong);
-  filter: brightness(1.03);
+  transform: translateY(-2px);
+  border-color: var(--primary-strong);
+  background: var(--primary-strong);
+  color: white;
+  box-shadow: 0 10px 22px rgb(65 0 2 / 0.14);
 }
 
 .cia-liquid-button--nav {
   min-height: 2.25rem;
-  border-color: rgb(107 20 20 / 0.12);
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.72), rgb(255 255 255 / 0.3)),
-    rgb(252 249 248 / 0.52);
-  box-shadow:
-    0 8px 18px rgb(65 0 2 / 0.07),
-    inset 0 1px 0 rgb(255 255 255 / 0.7),
-    inset 0 -1px 0 rgb(107 20 20 / 0.08);
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text-muted);
 }
 
 .cia-liquid-button--nav-strong {
-  border-color: rgb(107 20 20 / 0.28);
-  background:
-    linear-gradient(135deg, rgb(107 20 20 / 0.9), rgb(131 19 19 / 0.74)),
-    rgb(107 20 20 / 0.72);
+  border-color: var(--primary);
+  background: var(--primary);
   color: white;
-  box-shadow:
-    0 10px 24px rgb(65 0 2 / 0.16),
-    inset 0 1px 0 rgb(255 255 255 / 0.28),
-    inset 0 -1px 0 rgb(0 0 0 / 0.16);
+  box-shadow: 0 8px 18px rgb(65 0 2 / 0.12);
 }
 
 .cia-liquid-button--nav-strong:hover {
@@ -1006,41 +1152,34 @@ img {
 
 .cia-liquid-button--hero {
   margin-top: 2rem;
-  border-color: rgb(255 255 255 / 0.54);
-  color: white;
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.28), rgb(255 255 255 / 0.08)),
-    rgb(255 255 255 / 0.08);
-  box-shadow:
-    0 18px 40px rgb(0 0 0 / 0.18),
-    inset 0 1px 0 rgb(255 255 255 / 0.54),
-    inset 0 -1px 0 rgb(255 255 255 / 0.12);
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: #241814;
+  box-shadow: 0 12px 26px rgb(0 0 0 / 0.18);
 }
 
 .cia-liquid-button--hero:hover {
-  color: white;
+  border-color: #e5c9a4;
+  background: #e5c9a4;
+  color: #241814;
 }
 
 .cia-liquid-button--dark {
-  border-color: rgb(255 255 255 / 0.22);
+  border-color: var(--secondary);
   color: white;
-  background:
-    linear-gradient(135deg, rgb(255 255 255 / 0.18), rgb(255 255 255 / 0.05)),
-    rgb(255 255 255 / 0.07);
-  box-shadow:
-    0 18px 38px rgb(0 0 0 / 0.26),
-    inset 0 1px 0 rgb(255 255 255 / 0.25),
-    inset 0 -1px 0 rgb(255 255 255 / 0.08);
+  background: transparent;
+  box-shadow: none;
 }
 
 .cia-liquid-button--dark:hover {
-  color: white;
+  border-color: var(--secondary);
+  background: var(--secondary);
+  color: #241814;
 }
 
 .cia-liquid-button--dark-secondary {
-  background:
-    linear-gradient(135deg, rgb(212 184 150 / 0.22), rgb(255 255 255 / 0.05)),
-    rgb(255 255 255 / 0.04);
+  border-color: rgb(243 240 239 / 0.52);
+  color: var(--text-on-dark);
 }
 
 .cia-button {
@@ -1119,47 +1258,14 @@ img {
   color: var(--text);
 }
 
-.cia-newsletter__opening-q cite {
-  display: block;
-  margin-top: 0.75rem;
-  font-family: var(--font-inter), sans-serif;
-  font-size: 0.72rem;
-  font-style: normal;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.72;
-}
-
-.cia-newsletter__rule {
-  border-left: 6px solid var(--primary);
-  border-radius: var(--radius);
-  background: var(--surface-tint);
-  padding: 1.1rem 1.5rem;
-  font-family: var(--font-playfair), serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.5;
-  transition: background-color var(--motion-medium) var(--ease-standard), border-color var(--motion-medium) var(--ease-standard);
-}
-
-.cia-newsletter__rule:hover {
-  background: var(--surface-blue);
-  border-color: var(--primary-strong);
-}
-
-.cia-newsletter__rule strong {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-family: var(--font-inter), sans-serif;
-  font-style: normal;
+.cia-newsletter__opening-title {
+  margin: 0 0 0.65rem;
+  padding-left: calc(1.75rem + 4px);
+  color: var(--primary);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--primary);
 }
 
 .cia-newsletter__specs {
@@ -1233,15 +1339,10 @@ img {
 
 .cia-liquid-button--newsletter-cta {
   align-self: flex-start;
-  border-color: rgb(107 20 20 / 0.22);
-  background:
-    linear-gradient(135deg, rgb(107 20 20 / 0.88), rgb(131 19 19 / 0.72)),
-    rgb(107 20 20 / 0.7);
+  border-color: var(--primary);
+  background: var(--primary);
   color: white;
-  box-shadow:
-    0 10px 28px rgb(65 0 2 / 0.18),
-    inset 0 1px 0 rgb(255 255 255 / 0.24),
-    inset 0 -1px 0 rgb(0 0 0 / 0.14);
+  box-shadow: 0 8px 18px rgb(65 0 2 / 0.12);
 }
 
 .cia-liquid-button--newsletter-cta:hover {
@@ -1249,6 +1350,14 @@ img {
 }
 
 @media (max-width: 1023px) {
+  .cia-kickstart-program {
+    grid-template-columns: 1fr;
+  }
+
+  .cia-kickstart-side {
+    padding-top: 0;
+  }
+
   .cia-newsletter {
     grid-template-columns: 1fr;
   }

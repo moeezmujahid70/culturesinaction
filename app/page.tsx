@@ -2,37 +2,42 @@ import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Nav } from "@/components/nav";
 
 const newsletterSpecs = [
-  "Free, one-hour Zoom session",
-  "Capped at 10 participants per session",
-  "Participants drawn from different roles, industries, and experience levels",
-  "No keynotes, slide decks, vendor pitches, or recordings",
-  "Facilitated — not hosted — with a single opening question",
-  "Low-commitment participation, opt-out at any time",
+  "Free, one-hour Zoom session.",
+  "Capped at 10 participants per session.",
+  "Participants drawn from different roles, industries, and experience levels.",
+  "No keynotes, slide decks, vendor pitches, or recordings.",
+  "Facilitated — not hosted — with a single opening question.",
+  "Low-commitment participation, opt-out at any time.",
 ];
 
-const kickstartCards = [
+const kickstartSteps = [
   {
-    number: "01",
-    title: "Build It Together",
-    body: "The team designs its own COS, including decision principles, behavioral expectations, and accountability structures, through a guided, facilitated process that surfaces real consensus.",
+    number: "1.",
+    title: "Choose your team",
+    body: "A department group, a project team, an executive team, or any team ready to get aligned.",
   },
   {
-    number: "02",
-    title: "Share It Openly",
-    body: "The finished COS lives in Culture Quest Software, visible to every member, available to leadership, and ready to serve as a shared reference point.",
+    number: "2.",
+    title: "We handle all the preparation",
+    body: "Personalized invitations for participants and all the background information they need before the session.",
   },
   {
-    number: "03",
-    title: "Improve It Continuously",
-    body: "The COS is not a document filed and forgotten. The Feedback & Improvement Loop built into every Kickstart keeps the system alive, updated, and owned by the team.",
+    number: "3.",
+    title: "We come to you",
+    body: "At your site, we facilitate a focused, high-energy 3-hour working session — no homework, no long rollout, no consultants camping in your office for months.",
+  },
+  {
+    number: "4.",
+    title: "Your team leaves with something real",
+    body: "Every participant gets access to a complete, online Culture Operating System built specifically for their team — shared and visible to all members from day one.",
   },
 ];
 
 const teamFit = [
-  "Any size, from a two-person project team to a large division",
-  "Any function, including operations, sales, clinical, engineering, and administrative",
-  "Any level, from front-line teams to middle management and executive leadership",
-  "Any starting point, regardless of prior culture work history",
+  "Any size, from a two-person project team to a large division.",
+  "Any function, including operations, sales, clinical, engineering, and administrative.",
+  "Any level, from front-line teams to middle management and executive leadership.",
+  "Any starting point, regardless of prior culture work history.",
 ];
 
 const cosQuestions = [
@@ -190,36 +195,60 @@ export default function Home() {
 
       <section className="cia-section" id="kickstart">
         <div className="cia-shell">
-          <div className="cia-section__intro">
-            <p className="cia-eyebrow">The Culture Quest Kickstart</p>
-            <h2>Where Every Team Begins</h2>
-            <p className="cia-body-lg cia-intro-copy">
-              Most culture initiatives stall before they start because they
-              belong to HR, not to the team. The Kickstart changes that. It is
-              a structured, facilitated experience that puts every team in the
-              designer&apos;s seat.
-            </p>
-          </div>
+          <div className="cia-kickstart-program">
+            <div className="cia-kickstart-main">
+              <p className="cia-eyebrow">Kickstart Program</p>
+              <h2>
+                Launch Your Team&apos;s{" "}
+                <span>Culture Operating System</span> in Just One Day
+              </h2>
+              <p className="cia-body-lg">
+                The fastest, most affordable way to give your team the
+                foundation they&apos;ve been missing — a fully built Culture OS,
+                done in a single session.
+              </p>
 
-          <div className="cia-grid cia-grid--three">
-            {kickstartCards.map((card) => (
-              <article className="cia-card cia-card--numbered" key={card.number}>
-                <p className="cia-card__number">{card.number}</p>
-                <h3>{card.title}</h3>
-                <p>{card.body}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="cia-panel">
-            <p className="cia-panel__eyebrow">
-              Built for Every Team, No Exceptions
-            </p>
-            <div className="cia-grid cia-grid--four">
-              {teamFit.map((item) => (
-                <p key={item}>{item}</p>
-              ))}
+              <div className="cia-kickstart-steps">
+                <h3>Here&apos;s how it works</h3>
+                <ol>
+                  {kickstartSteps.map((step) => (
+                    <li key={step.number}>
+                      <span>{step.number}</span>
+                      <div>
+                        <strong>{step.title}</strong>
+                        <p>{step.body}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
+
+            <aside className="cia-kickstart-side">
+              <div className="cia-kickstart-investment">
+                <p>The Investment</p>
+                <strong>$500</strong>
+                <span>
+                  + ordinary travel expenses • Culture Quest software included
+                </span>
+              </div>
+
+              <div className="cia-panel cia-panel--kickstart">
+                <p className="cia-panel__eyebrow">
+                  For Every Team, No Exceptions
+                </p>
+                <div className="cia-kickstart-fit-list">
+                  {teamFit.map((item) => (
+                    <p key={item}>{item}</p>
+                  ))}
+                </div>
+              </div>
+
+              <p className="cia-kickstart-tagline">
+                <strong>One team. One afternoon.</strong>{" "}
+                <em>A culture that runs on purpose.</em>
+              </p>
+            </aside>
           </div>
 
           <div className="cia-quote-band">
@@ -344,17 +373,14 @@ export default function Home() {
                 loud with people who get it.
               </p>
 
+              <p className="cia-newsletter__opening-title">
+                Opening question, every session.
+              </p>
               <blockquote className="cia-newsletter__opening-q">
                 &ldquo;What&apos;s something you&apos;re seeing right now that
                 surprised you, that you just learned, or that&apos;s
                 challenging you?&rdquo;
-                <cite>Opening question, every session</cite>
               </blockquote>
-
-              <div className="cia-newsletter__rule">
-                <strong>The one firm rule</strong>
-                What&apos;s said in the room stays in the room.
-              </div>
 
               <LiquidButton
                 asChild
