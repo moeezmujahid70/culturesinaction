@@ -3,7 +3,9 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Cultures in Action | Engineering Cultures That Work</title>
+<title>Cultures in Action | Culture Operating Systems</title>
+<link rel="icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/apple-icon.png"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -88,14 +90,14 @@
                 "headline-sm": ["Playfair Display"]
           },
           "fontSize": {
-                "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg": ["72px", {"lineHeight": "1.02", "letterSpacing": "0", "fontWeight": "700"}],
+                "body-lg": ["19px", {"lineHeight": "1.7", "fontWeight": "400"}],
                 "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "headline-md": ["40px", {"lineHeight": "1.18", "fontWeight": "600"}],
+                "headline-lg": ["52px", {"lineHeight": "1.08", "fontWeight": "700"}],
                 "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
                 "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+                "headline-sm": ["23px", {"lineHeight": "1.25", "fontWeight": "600"}]
           }
         },
       },
@@ -122,28 +124,31 @@
   </style>
 </head>
 <body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed font-body-md">
-<nav class="bg-surface border-b border-outline-variant sticky top-0 z-50 shadow-sm">
-<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-4">
-<div class="font-headline-sm text-headline-sm font-bold text-on-surface">Cultures in Action</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface font-label-caps hover:text-primary transition-colors text-primary border-b-2 border-primary pb-1" href="#kickstart">KICKSTART</a>
-<a class="text-on-surface font-label-caps hover:text-primary transition-colors" href="#what">WHAT IS A COS</a>
-<a class="text-on-surface font-label-caps hover:text-primary transition-colors" href="#arc">WELLBEING ARC</a>
-<a class="text-on-surface font-label-caps hover:text-primary transition-colors" href="#founder">FOUNDER</a>
-<a class="text-on-surface font-label-caps hover:text-primary transition-colors flex items-center gap-1" href="https://www.culturequestsoftware.net" target="_blank">SOFTWARE <span class="material-symbols-outlined text-[14px]">north_east</span></a>
-<a class="bg-primary text-on-primary font-label-caps px-6 py-2 rounded-lg hover:bg-primary-container transition-all active:scale-95" href="#action">GET STARTED</a>
+<nav class="bg-surface border-b-2 border-primary sticky top-0 z-50 shadow-sm">
+<div class="flex justify-between items-center max-w-container-max mx-auto px-margin-desktop py-3 min-h-20 gap-8">
+<a class="flex items-center" href="#top">
+<img alt="Cultures in Action" class="w-28 max-h-16 object-contain" src="/logo-nav.png"/>
+</a>
+<div class="hidden md:flex gap-3 items-center justify-end flex-1">
+<a class="text-on-surface font-label-caps px-3 py-2 rounded hover:bg-primary/5 hover:text-primary transition-colors" href="#mission">MISSION</a>
+<a class="text-primary font-label-caps px-3 py-2 rounded bg-primary/5 border-b-2 border-primary transition-colors" href="#kickstart">KICKSTART</a>
+<a class="text-on-surface font-label-caps px-3 py-2 rounded hover:bg-primary/5 hover:text-primary transition-colors" href="#framework">FRAMEWORK</a>
+<a class="text-on-surface font-label-caps px-3 py-2 rounded hover:bg-primary/5 hover:text-primary transition-colors" href="#arc">WELLBEING ARC</a>
+<a class="text-on-surface font-label-caps px-3 py-2 rounded hover:bg-primary/5 hover:text-primary transition-colors" href="#founder">FOUNDER</a>
+<a class="text-on-surface font-label-caps px-3 py-2 rounded hover:bg-primary/5 hover:text-primary transition-colors flex items-center gap-1" href="https://www.culturequestsoftware.net" target="_blank">SOFTWARE <span class="material-symbols-outlined">north_east</span></a>
+<a class="bg-primary text-on-primary font-label-caps px-6 py-3 rounded hover:bg-primary-container transition-all active:scale-95 ml-2" href="#action">GET STARTED</a>
 </div>
 <button class="md:hidden text-on-surface">
 <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </nav>
-<header class="bg-primary py-section-padding relative overflow-hidden min-h-[600px] flex items-center">
+<header class="bg-primary py-section-padding relative overflow-hidden min-h-[600px] flex items-center" id="top">
 <div class="max-w-container-max mx-auto px-margin-desktop w-full relative z-10">
 <div class="flex flex-col items-start gap-6 max-w-4xl">
 <div class="font-label-caps text-on-primary opacity-80 uppercase tracking-widest">CULTURES IN ACTION</div>
-<h1 class="font-display-lg text-display-lg text-on-primary text-left">Engineering Cultures That Work</h1>
-<p class="font-body-lg text-body-lg italic text-on-primary max-w-2xl opacity-90">Most organizations have values. Few have the systems to make those values a workplace reality.</p>
+<h1 class="font-display-lg text-display-lg text-on-primary text-left">Culture Operating Systems</h1>
+<p class="font-body-lg text-body-lg italic text-on-primary max-w-2xl opacity-90 font-semibold">We help engineer cultures that work.</p>
 <div class="mt-8">
 <a class="border-2 border-on-primary text-on-primary font-label-caps px-10 py-4 rounded-lg hover:bg-on-primary hover:text-primary transition-all active:scale-95" href="#kickstart">EXPLORE THE KICKSTART</a>
 </div>
@@ -165,12 +170,12 @@
             I have approached this challenge from multiple vantage points — as a university department head, a corporate president, an entrepreneur, and a Senior Scientist at Gallup. Each role reinforced the same lesson: culture is not a vague concept. It is a system to be operated. The goal of this work is to make that system visible and actionable.
           </p>
           <br/>
-<div class="font-headline-sm text-headline-sm italic text-on-surface">— Jerry</div>
+<div class="font-headline-sm text-headline-sm italic text-on-surface mt-5">— Jerry</div>
 </div>
 </div>
 </div>
 </section>
-<section class="bg-surface-container-low py-section-padding">
+<section class="bg-surface-container-low py-section-padding" id="mission">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
 <div class="md:col-span-6">
@@ -183,125 +188,23 @@
 </div>
 </div>
 <div class="md:col-span-5 md:col-start-8">
-<div class="bg-surface p-10 pillar-card shadow-sm border border-outline-variant">
-<h3 class="font-headline-sm text-headline-sm mb-8">The Operational Difference</h3>
-<ul class="bullet-square space-y-5 font-body-md text-on-surface-variant">
-<li>Move from intent to implementation</li>
-<li>Empower team leaders with actionable rules</li>
-<li>Create a shared blueprint for daily function</li>
-<li>Foster long-term cultural resilience</li>
-</ul>
-</div>
+<figure class="m-0 overflow-hidden rounded shadow-lg min-h-[30rem]">
+<img alt="Team members collaborating around a table" class="w-full h-full min-h-[30rem] object-cover" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80"/>
+</figure>
 </div>
 </div>
 </div>
 </section>
-<section class="bg-surface py-section-padding" id="kickstart">
+<section class="bg-surface-container-low py-section-padding" id="framework">
 <div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="text-center md:text-left mb-20">
-<div class="font-label-caps text-primary uppercase mb-4">THE CULTURE QUEST KICKSTART</div>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Where Every Team Begins</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
-          Most culture initiatives stall before they start — because they belong to HR, not to the team. 
-          The Kickstart changes that. It is a structured, facilitated experience that puts every team in the designer's seat.
-        </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-20">
-<div class="bg-white p-10 pillar-card shadow-sm relative overflow-hidden h-full">
-<div class="font-display-lg text-display-lg text-tertiary-fixed absolute -top-4 -right-2 opacity-20 pointer-events-none">01</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 relative z-10">Build It Together</h3>
-<p class="font-body-md text-body-md text-on-surface-variant relative z-10">The team designs its own COS — decision principles, behavioral expectations, accountability structures — through a guided, facilitated process that surfaces real consensus.</p>
-</div>
-<div class="bg-white p-10 pillar-card shadow-sm relative overflow-hidden h-full">
-<div class="font-display-lg text-display-lg text-tertiary-fixed absolute -top-4 -right-2 opacity-20 pointer-events-none">02</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 relative z-10">Share It Openly</h3>
-<p class="font-body-md text-body-md text-on-surface-variant relative z-10">The finished COS lives in Culture Quest Software — visible to every member, available to leadership, and ready to serve as a shared reference point.</p>
-</div>
-<div class="bg-white p-10 pillar-card shadow-sm relative overflow-hidden h-full">
-<div class="font-display-lg text-display-lg text-tertiary-fixed absolute -top-4 -right-2 opacity-20 pointer-events-none">03</div>
-<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6 relative z-10">Improve It Continuously</h3>
-<p class="font-body-md text-body-md text-on-surface-variant relative z-10">The COS is not a document filed and forgotten. The Feedback &amp; Improvement Loop built into every Kickstart keeps the system alive, updated, and owned by the team.</p>
-</div>
-</div>
-<div class="bg-tertiary-fixed p-10 border-l-[6px] border-primary mb-20">
-<div class="font-label-caps text-on-tertiary-fixed uppercase mb-8 tracking-widest opacity-80">BUILT FOR EVERY TEAM — NO EXCEPTIONS</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-<div class="font-body-md text-on-tertiary-fixed">Any size — from a two-person project team to a large division</div>
-<div class="font-body-md text-on-tertiary-fixed">Any function — operations, sales, clinical, engineering, administrative</div>
-<div class="font-body-md text-on-tertiary-fixed">Any level — front-line teams, middle management, executive leadership</div>
-<div class="font-body-md text-on-tertiary-fixed">Any starting point — regardless of prior culture work history</div>
-</div>
-</div>
-<div class="flex items-center justify-center gap-8 py-12">
-<div class="h-[1px] w-16 bg-primary"></div>
-<p class="font-headline-md text-headline-md italic text-center text-on-surface max-w-3xl leading-relaxed">
-          "The Kickstart is invigorating precisely because it is theirs. The team does not receive a culture — it builds one."
-        </p>
-<div class="h-[1px] w-16 bg-primary"></div>
-</div>
-</div>
-</section>
-<section class="bg-surface-container-low py-section-padding" id="what">
-<div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<div class="md:col-span-5">
+<div class="max-w-3xl mb-12">
 <div class="font-label-caps text-primary uppercase mb-4">THE FRAMEWORK</div>
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">What a Culture Operating System Is</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">A Culture Operating System (COS) is the explicit, designed set of rules and mechanisms that determine how a team operates day to day.</p>
-<div class="bg-tertiary-fixed p-10 border-l-[6px] border-primary">
-<div class="font-label-caps uppercase mb-6 text-on-tertiary-fixed-variant opacity-80">THE COS ANSWERS THESE QUESTIONS</div>
-<ul class="bullet-square space-y-4 font-body-md text-on-surface">
-<li>Who decides, and how are tradeoffs resolved?</li>
-<li>What behavior is expected under pressure?</li>
-<li>What is actually measured and held accountable?</li>
-<li>How does the team learn and improve over time?</li>
-</ul>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A Culture Operating System (COS) is the explicit, designed set of rules and mechanisms that determine how a team operates day to day.</p>
 </div>
-</div>
-<div class="md:col-span-6 md:col-start-7 flex flex-col justify-center">
-<p class="font-body-md text-body-md text-on-surface-variant mb-10">A COS is not a mission statement or a list of values on a wall. It is a working set of interlocking components that together determine what actually happens when no one is watching.</p>
-<div class="bg-inverse-surface p-12 pillar-card">
-<div class="font-label-caps uppercase mb-8 text-tertiary-fixed opacity-70 tracking-widest">THE FIVE COMPONENTS OF A COS</div>
-<div class="space-y-8">
-<div class="flex items-start gap-6">
-<span class="font-headline-sm text-primary font-bold">01</span>
-<div>
-<h4 class="font-body-lg font-bold text-inverse-on-surface mb-1">Decision Principles</h4>
-<p class="font-body-md text-surface-variant opacity-80">Clarifying who decides and the logic used for resolutions.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<span class="font-headline-sm text-primary font-bold">02</span>
-<div>
-<h4 class="font-body-lg font-bold text-inverse-on-surface mb-1">Behavioral Principles</h4>
-<p class="font-body-md text-surface-variant opacity-80">Setting concrete expectations for how people act.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<span class="font-headline-sm text-primary font-bold">03</span>
-<div>
-<h4 class="font-body-lg font-bold text-inverse-on-surface mb-1">Actions with Owners</h4>
-<p class="font-body-md text-surface-variant opacity-80">Defined work with clear individual accountability.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<span class="font-headline-sm text-primary font-bold">04</span>
-<div>
-<h4 class="font-body-lg font-bold text-inverse-on-surface mb-1">Measurements</h4>
-<p class="font-body-md text-surface-variant opacity-80">Identifying what actually gets tracked and why.</p>
-</div>
-</div>
-<div class="flex items-start gap-6">
-<span class="font-headline-sm text-primary font-bold">05</span>
-<div>
-<h4 class="font-body-lg font-bold text-inverse-on-surface mb-1">Feedback &amp; Improvement Loop</h4>
-<p class="font-body-md text-surface-variant opacity-80">How the system learns, adapts, and grows stronger.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
+<figure class="m-0 mx-auto max-w-6xl overflow-hidden rounded border border-outline-variant bg-surface p-5 shadow-lg">
+<img alt="Culture Operating System framework diagram" class="w-full h-auto rounded" src="/framework.png"/>
+</figure>
 </div>
 </section>
 <div class="bg-surface py-20">
@@ -309,6 +212,38 @@
 <p class="font-headline-md text-headline-md italic text-primary">A culture that works is not a happy accident. It is a designed system.</p>
 </div>
 </div>
+<section class="bg-surface py-section-padding" id="kickstart">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-gutter items-start mb-20">
+<div>
+<div class="font-label-caps text-primary uppercase mb-4">KICKSTART PROGRAM</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Launch Your Team&rsquo;s Culture Operating System (COS) in Just Three Hours</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mb-12">
+          The fastest, most affordable way to give your team the foundation they need — an operational COS, done in 3 hours for one meeting or 1.5 hours with two meeting times.
+        </p>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-6">Here&rsquo;s how it works</h3>
+<ol class="grid gap-5 list-none p-0 m-0">
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">1.</span><span>Choose your team and team leader.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">2.</span><span>I email the team leader complete step by step details for managing the meeting(s).</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">3.</span><span>The team leader and I have a zoom meeting to go through the steps.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">4.</span><span>The team meets and goes through the step-by-step process. I am available on Zoom for help as needed.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">5.</span><span>One team member records the data decided upon by the team.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">6.</span><span>What they collect is sent to me.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">7.</span><span>I send the team leader the Culture Quest link to provide to all team members so they have access to the complete, online Culture Operating System they built.</span></li>
+<li class="grid grid-cols-[2rem_1fr] gap-4 font-body-md text-body-md text-on-surface-variant"><span class="text-[#005A43] font-bold text-right">8.</span><span>The team leader updates the COS contents for continuous improvements.</span></li>
+</ol>
+</div>
+</div>
+<aside class="bg-surface-container-low border-t-[6px] border-primary p-10 shadow-sm">
+<div class="font-label-caps text-primary uppercase mb-4">THE FEE</div>
+<div class="font-display-lg text-display-lg text-primary mb-4">$199</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">Culture Quest software included</p>
+<p class="font-headline-sm text-headline-sm text-on-surface leading-relaxed">One team. Three hours. <em>A culture that runs on purpose.</em></p>
+</aside>
+</div>
+</div>
+</section>
 <section class="bg-tertiary-fixed py-section-padding" id="arc">
 <div class="max-w-container-max mx-auto px-margin-desktop">
 <div class="max-w-3xl mb-20">
@@ -319,46 +254,46 @@
 <div class="space-y-0 border-t border-outline-variant">
 <div class="grid grid-cols-1 md:grid-cols-12 py-16 border-b border-outline-variant">
 <div class="md:col-span-3">
-<div class="font-headline-sm text-primary mb-2">2010</div>
-<div class="font-label-caps text-on-surface-variant uppercase tracking-tighter">GALLUP FOUNDATION</div>
+<div class="font-headline-sm text-on-surface mb-2 font-bold">2010</div>
+<div class="font-label-caps text-primary uppercase tracking-widest font-black">GALLUP FOUNDATION</div>
 </div>
 <div class="md:col-span-8 md:col-start-5">
 <h3 class="font-headline-sm text-on-surface mb-4">The Wellbeing Research</h3>
-<p class="font-body-md text-on-surface-variant">Landmark research identified five interconnected domains — Career, Social, Financial, Physical, and Community. Organizations began to see wellbeing as a design problem, not just an HR benefit.</p>
+<p class="font-body-md text-on-surface">Landmark research identified five interconnected domains — Career, Social, Financial, Physical, and Community. Organizations began to see wellbeing as a design problem, not just an HR benefit.</p>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 py-16 border-b border-outline-variant">
 <div class="md:col-span-3">
-<div class="font-headline-sm text-primary mb-2">2013–2019</div>
-<div class="font-label-caps text-on-surface-variant uppercase tracking-tighter">ENGAGEMENT AS THE HINGE</div>
+<div class="font-headline-sm text-on-surface mb-2 font-bold">2013–2019</div>
+<div class="font-label-caps text-primary uppercase tracking-widest font-black">ENGAGEMENT AS THE HINGE</div>
 </div>
 <div class="md:col-span-8 md:col-start-5">
 <h3 class="font-headline-sm text-on-surface mb-4">Culture as the Container</h3>
-<p class="font-body-md text-on-surface-variant">Engagement and wellbeing were deeply entangled. You could not optimize the person without attending to the culture. The question shifted to "what experience are we designing?"</p>
+<p class="font-body-md text-on-surface">Engagement and wellbeing were deeply entangled. You could not optimize the person without attending to the culture. The question shifted to "what experience are we designing?"</p>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 py-16 border-b border-outline-variant">
 <div class="md:col-span-3">
-<div class="font-headline-sm text-primary mb-2">2020–2022</div>
-<div class="font-label-caps text-on-surface-variant uppercase tracking-tighter">THE PANDEMIC RUPTURE</div>
+<div class="font-headline-sm text-on-surface mb-2 font-bold">2020–2022</div>
+<div class="font-label-caps text-primary uppercase tracking-widest font-black">THE PANDEMIC RUPTURE</div>
 </div>
 <div class="md:col-span-8 md:col-start-5">
 <h3 class="font-headline-sm text-on-surface mb-4">When Culture Gets Tested</h3>
-<p class="font-body-md text-on-surface-variant mb-8">COVID-19 exposed underdeveloped wellbeing models. The Great Resignation made cultural negligence visible. Culture either holds under pressure or it doesn't.</p>
-<div class="bg-white p-8 border-l-[6px] border-primary shadow-sm">
-<div class="font-label-caps uppercase text-primary mb-3">THE COST OF NEGLIGENCE</div>
-<p class="font-body-md italic text-on-surface-variant">Organizations with weak cultures saw voluntary turnover spike 20–40% during 2021–2022.</p>
+<p class="font-body-md text-on-surface mb-5">COVID-19 exposed underdeveloped wellbeing models. The Great Resignation made cultural negligence visible. Culture either holds under pressure or it doesn't.</p>
+<div>
+<div class="font-label-caps uppercase text-primary mb-2 tracking-widest font-black">THE COST OF NEGLIGENCE</div>
+<p class="font-body-md text-on-surface">Organizations with weak cultures saw voluntary turnover spike 20–40% during 2021–2022.</p>
 </div>
 </div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-12 py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 py-16 px-8 border border-primary/20 border-l-[6px] border-l-primary bg-white/60 shadow-sm">
 <div class="md:col-span-3">
-<div class="font-headline-sm text-primary mb-2">2024–2026</div>
-<div class="font-label-caps text-on-surface-variant uppercase tracking-tighter">THE STRUCTURAL ANSWER</div>
+<div class="font-headline-sm text-on-surface mb-3 font-bold">2024–2026</div>
+<div class="font-label-caps text-primary uppercase tracking-widest font-black inline-block">THE STRUCTURAL ANSWER</div>
 </div>
 <div class="md:col-span-8 md:col-start-5">
 <h3 class="font-headline-sm text-on-surface mb-4">The Culture Operating System</h3>
-<p class="font-body-md text-on-surface-variant">Global employee engagement has stagnated at 23%. The diagnosis is clear: programs were layered on top of broken cultures. The COS is the structural, behavioral infrastructure required for the modern workplace.</p>
+<p class="font-body-md text-on-surface">Global employee engagement has stagnated at 23%. The diagnosis is clear: programs were layered on top of broken cultures. The COS is the structural, behavioral infrastructure required for the modern workplace.</p>
 </div>
 </div>
 </div>

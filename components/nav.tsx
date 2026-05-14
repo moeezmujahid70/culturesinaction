@@ -1,11 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 
 const navLinks = [
+  { href: "#mission", label: "Mission" },
+  { href: "#framework", label: "Framework" },
   { href: "#kickstart", label: "Kickstart" },
-  { href: "#what", label: "What Is a COS" },
   { href: "#arc", label: "Wellbeing Arc" },
   { href: "#newsletter", label: "Newsletter" },
   { href: "#founder", label: "Founder" },
@@ -40,7 +42,14 @@ export function Nav() {
     <nav className="cia-nav" aria-label="Primary">
       <div className="cia-shell cia-nav__inner">
         <a className="cia-nav__brand" href="#top" onClick={close}>
-          Cultures in Action
+          <Image
+            alt="Cultures in Action"
+            className="cia-nav__logo"
+            height={739}
+            src="/logo-nav.png"
+            priority
+            width={1002}
+          />
         </a>
 
         <div className="cia-nav__links">

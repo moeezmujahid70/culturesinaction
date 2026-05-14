@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Nav } from "@/components/nav";
 
@@ -13,23 +14,35 @@ const newsletterSpecs = [
 const kickstartSteps = [
   {
     number: "1.",
-    title: "Choose your team",
-    body: "A department group, a project team, an executive team, or any team ready to get aligned.",
+    body: "Choose your team and team leader.",
   },
   {
     number: "2.",
-    title: "We handle all the preparation",
-    body: "Personalized invitations for participants and all the background information they need before the session.",
+    body: "I email the team leader complete step by step details for managing the meeting(s).",
   },
   {
     number: "3.",
-    title: "We come to you",
-    body: "At your site, we facilitate a focused, high-energy 3-hour working session — no homework, no long rollout, no consultants camping in your office for months.",
+    body: "The team leader and I have a zoom meeting to go through the steps.",
   },
   {
     number: "4.",
-    title: "Your team leaves with something real",
-    body: "Every participant gets access to a complete, online Culture Operating System built specifically for their team — shared and visible to all members from day one.",
+    body: "The team meets and goes through the step-by-step process. I am available on Zoom for help as needed.",
+  },
+  {
+    number: "5.",
+    body: "One team member records the data decided upon by the team.",
+  },
+  {
+    number: "6.",
+    body: "What they collect is sent to me.",
+  },
+  {
+    number: "7.",
+    body: "I send the team leader the Culture Quest link to provide to all team members so they have access to the complete, online Culture Operating System they built.",
+  },
+  {
+    number: "8.",
+    body: "The team leader updates the COS contents for continuous improvements.",
   },
 ];
 
@@ -38,41 +51,6 @@ const teamFit = [
   "Any function, including operations, sales, clinical, engineering, and administrative.",
   "Any level, from front-line teams to middle management and executive leadership.",
   "Any starting point, regardless of prior culture work history.",
-];
-
-const cosQuestions = [
-  "Who decides, and how are tradeoffs resolved?",
-  "What behavior is expected under pressure?",
-  "What is actually measured and held accountable?",
-  "How does the team learn and improve over time?",
-];
-
-const cosComponents = [
-  {
-    number: "01",
-    title: "Decision Principles",
-    body: "Clarifying who decides and the logic used for resolutions.",
-  },
-  {
-    number: "02",
-    title: "Behavioral Principles",
-    body: "Setting concrete expectations for how people act.",
-  },
-  {
-    number: "03",
-    title: "Actions with Owners",
-    body: "Defined work with clear individual accountability.",
-  },
-  {
-    number: "04",
-    title: "Measurements",
-    body: "Identifying what actually gets tracked and why.",
-  },
-  {
-    number: "05",
-    title: "Feedback & Improvement Loop",
-    body: "How the system learns, adapts, and grows stronger.",
-  },
 ];
 
 const timeline = [
@@ -103,6 +81,7 @@ const timeline = [
     label: "The Structural Answer",
     title: "The Culture Operating System",
     body: "Global employee engagement has stagnated at 23%. The diagnosis is clear: programs were layered on top of broken cultures. The COS is the structural, behavioral infrastructure required for the modern workplace.",
+    featured: true,
   },
 ];
 
@@ -115,10 +94,9 @@ export default function Home() {
         <div className="cia-shell cia-hero__grid">
           <div className="cia-hero__content">
             <p className="cia-eyebrow cia-eyebrow--light">Cultures in Action</p>
-            <h1>Engineering Cultures That Work</h1>
+            <h1>Culture Operating Systems</h1>
             <p className="cia-hero__lede">
-              Most organizations have values. Few have the systems to make
-              those values a workplace reality.
+              We help engineer cultures that work.
             </p>
             <LiquidButton
               asChild
@@ -157,7 +135,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cia-section cia-section--tint">
+      <section className="cia-section cia-section--tint" id="mission">
         <div className="cia-shell cia-two-column">
           <div className="cia-stack">
             <p className="cia-eyebrow">Our Mission</p>
@@ -181,17 +159,46 @@ export default function Home() {
               behave, and how the team gets better over time.
             </p>
           </div>
-          <aside className="cia-card cia-card--outline">
-            <h3>The Operational Difference</h3>
-            <ul className="cia-square-list">
-              <li>Move from intent to implementation</li>
-              <li>Empower team leaders with actionable rules</li>
-              <li>Create a shared blueprint for daily function</li>
-              <li>Foster long-term cultural resilience</li>
-            </ul>
-          </aside>
+          <figure
+            aria-label="Team members collaborating around a table"
+            className="cia-team-photo"
+            role="img"
+          />
         </div>
       </section>
+
+      <section className="cia-section cia-section--tint" id="framework">
+        <div className="cia-shell cia-framework">
+          <div className="cia-section__intro cia-section__intro--narrow">
+            <p className="cia-eyebrow">The Framework</p>
+            <h2>What a Culture Operating System Is</h2>
+            <p className="cia-body-lg">
+              A Culture Operating System (COS) is the explicit, designed set of
+              rules and mechanisms that determine how a team operates day to
+              day.
+            </p>
+          </div>
+
+          <figure className="cia-framework__figure">
+            <Image
+              alt="Culture Operating System framework diagram"
+              height={1500}
+              src="/framework.png"
+              sizes="(max-width: 768px) 100vw, 1120px"
+              width={2700}
+            />
+          </figure>
+        </div>
+      </section>
+
+      <div className="cia-statement">
+        <div className="cia-shell">
+          <p>
+            A culture that works is not a happy accident. It is a designed
+            system.
+          </p>
+        </div>
+      </div>
 
       <section className="cia-section" id="kickstart">
         <div className="cia-shell">
@@ -200,12 +207,13 @@ export default function Home() {
               <p className="cia-eyebrow">Kickstart Program</p>
               <h2>
                 Launch Your Team&apos;s{" "}
-                <span>Culture Operating System</span> in Just One Day
+                <span>Culture Operating System (COS)</span> in Just Three
+                Hours
               </h2>
               <p className="cia-body-lg">
                 The fastest, most affordable way to give your team the
-                foundation they&apos;ve been missing — a fully built Culture OS,
-                done in a single session.
+                foundation they need — an operational COS, done in 3 hours for
+                one meeting or 1.5 hours with two meeting times.
               </p>
 
               <div className="cia-kickstart-steps">
@@ -214,10 +222,7 @@ export default function Home() {
                   {kickstartSteps.map((step) => (
                     <li key={step.number}>
                       <span>{step.number}</span>
-                      <div>
-                        <strong>{step.title}</strong>
-                        <p>{step.body}</p>
-                      </div>
+                      <p>{step.body}</p>
                     </li>
                   ))}
                 </ol>
@@ -226,11 +231,9 @@ export default function Home() {
 
             <aside className="cia-kickstart-side">
               <div className="cia-kickstart-investment">
-                <p>The Investment</p>
-                <strong>$500</strong>
-                <span>
-                  + ordinary travel expenses • Culture Quest software included
-                </span>
+                <p>The Fee</p>
+                <strong>$199</strong>
+                <span>Culture Quest software included</span>
               </div>
 
               <div className="cia-panel cia-panel--kickstart">
@@ -245,7 +248,7 @@ export default function Home() {
               </div>
 
               <p className="cia-kickstart-tagline">
-                <strong>One team. One afternoon.</strong>{" "}
+                <strong>One team. Three hours.</strong>{" "}
                 <em>A culture that runs on purpose.</em>
               </p>
             </aside>
@@ -263,59 +266,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cia-section cia-section--tint" id="what">
-        <div className="cia-shell cia-two-column">
-          <div className="cia-stack">
-            <p className="cia-eyebrow">The Framework</p>
-            <h2>What a Culture Operating System Is</h2>
-            <p className="cia-body-lg">
-              A Culture Operating System (COS) is the explicit, designed set of
-              rules and mechanisms that determine how a team operates day to
-              day.
-            </p>
-            <div className="cia-panel">
-              <p className="cia-panel__eyebrow">The COS Answers These Questions</p>
-              <ul className="cia-square-list">
-                {cosQuestions.map((question) => (
-                  <li key={question}>{question}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="cia-stack">
-            <p>
-              A COS is not a mission statement or a list of values on a wall.
-              It is a working set of interlocking components that together
-              determine what actually happens when no one is watching.
-            </p>
-            <div className="cia-card cia-card--dark">
-              <p className="cia-card__eyebrow">The Five Components of a COS</p>
-              <div className="cia-component-list">
-                {cosComponents.map((component) => (
-                  <div className="cia-component" key={component.number}>
-                    <p className="cia-component__number">{component.number}</p>
-                    <div>
-                      <h3>{component.title}</h3>
-                      <p>{component.body}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="cia-statement">
-        <div className="cia-shell">
-          <p>
-            A culture that works is not a happy accident. It is a designed
-            system.
-          </p>
-        </div>
-      </div>
-
       <section className="cia-section cia-section--blue" id="arc">
         <div className="cia-shell">
           <div className="cia-section__intro cia-section__intro--narrow">
@@ -330,7 +280,12 @@ export default function Home() {
 
           <div className="cia-timeline">
             {timeline.map((entry) => (
-              <article className="cia-timeline__row" key={entry.years}>
+              <article
+                className={`cia-timeline__row${
+                  entry.featured ? " cia-timeline__row--featured" : ""
+                }`}
+                key={entry.years}
+              >
                 <div className="cia-timeline__meta">
                   <p className="cia-timeline__year">{entry.years}</p>
                   <p className="cia-timeline__label">{entry.label}</p>
@@ -373,10 +328,10 @@ export default function Home() {
                 loud with people who get it.
               </p>
 
-              <p className="cia-newsletter__opening-title">
-                Opening question, every session.
-              </p>
               <blockquote className="cia-newsletter__opening-q">
+                <p className="cia-newsletter__opening-title">
+                  Opening question, every session.
+                </p>
                 &ldquo;What&apos;s something you&apos;re seeing right now that
                 surprised you, that you just learned, or that&apos;s
                 challenging you?&rdquo;
@@ -451,7 +406,7 @@ export default function Home() {
           <div>
             <p className="cia-footer__brand">Cultures in Action</p>
             <p className="cia-footer__copyright">
-              © 2024 Cultures in Action. Surgical Precision Consulting.
+              © 2026 Cultures in Action. Surgical Precision Consulting.
             </p>
           </div>
           <div className="cia-footer__links">
