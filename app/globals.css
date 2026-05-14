@@ -184,6 +184,19 @@ img {
   }
 }
 
+@keyframes cia-soft-glow {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translateX(-18%);
+  }
+
+  50% {
+    opacity: 0.32;
+    transform: translateX(12%);
+  }
+}
+
 .cia-motion-ready .cia-reveal {
   opacity: 0;
   transform: translate3d(0, 16px, 0);
@@ -287,6 +300,12 @@ img {
   height: auto;
   max-height: 4rem;
   object-fit: contain;
+  transition: filter var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-nav__brand:hover .cia-nav__logo {
+  filter: drop-shadow(0 8px 16px rgb(65 0 2 / 0.12));
+  transform: translateY(-1px);
 }
 
 .cia-nav__links {
@@ -533,6 +552,7 @@ img {
     linear-gradient(90deg, rgb(107 20 20 / 0.98) 0%, rgb(107 20 20 / 0.62) 19%, rgb(107 20 20 / 0.12) 46%, transparent 72%),
     radial-gradient(circle at 78% 28%, rgb(212 184 150 / 0.18), transparent 13rem),
     radial-gradient(circle at 62% 78%, rgb(0 0 0 / 0.32), transparent 19rem);
+  animation: cia-soft-glow 9s var(--ease-standard) infinite;
 }
 
 .cia-hero::after {
@@ -669,6 +689,14 @@ img {
   grid-template-columns: 2rem minmax(0, 1fr);
   gap: 0.75rem;
   align-items: start;
+  border-radius: var(--radius);
+  padding: 0.35rem 0.4rem;
+  transition: background-color var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-emphasis);
+}
+
+.cia-kickstart-steps li:hover {
+  background: rgb(0 90 67 / 0.055);
+  transform: translateX(3px);
 }
 
 .cia-kickstart-steps li > span {
@@ -677,6 +705,11 @@ img {
   font-weight: 800;
   line-height: 1.25;
   text-align: right;
+  transition: transform var(--motion-fast) var(--ease-emphasis);
+}
+
+.cia-kickstart-steps li:hover > span {
+  transform: translateX(-2px);
 }
 
 .cia-kickstart-steps strong {
@@ -755,6 +788,13 @@ img {
     linear-gradient(180deg, transparent 42%, rgb(65 0 2 / 0.16)),
     url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80") center / cover;
   box-shadow: var(--shadow-lift);
+  transition: box-shadow var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis), filter var(--motion-medium) var(--ease-standard);
+}
+
+.cia-team-photo:hover {
+  filter: saturate(1.02) contrast(1.01);
+  box-shadow: 0 18px 42px rgb(65 0 2 / 0.14);
+  transform: translateY(-2px);
 }
 
 .cia-framework {
@@ -775,12 +815,24 @@ img {
   background: var(--surface);
   padding: clamp(0.75rem, 2vw, 1.25rem);
   box-shadow: var(--shadow-lift);
+  transition: border-color var(--motion-medium) var(--ease-standard), box-shadow var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-framework__figure:hover {
+  border-color: rgb(107 20 20 / 0.28);
+  box-shadow: 0 20px 48px rgb(65 0 2 / 0.13);
+  transform: translateY(-3px);
 }
 
 .cia-framework__figure img {
   width: 100%;
   height: auto;
   border-radius: calc(var(--radius) * 0.75);
+  transition: transform 700ms var(--ease-emphasis);
+}
+
+.cia-framework__figure:hover img {
+  transform: scale(1.012);
 }
 
 .cia-stack > * + * {
@@ -1043,6 +1095,17 @@ img {
   background: var(--primary);
   opacity: 0.75;
   transform-origin: center;
+  transition: opacity var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-quote-band:hover span:first-child {
+  opacity: 1;
+  transform: translateX(0.5rem) scaleX(1.12);
+}
+
+.cia-quote-band:hover span:last-child {
+  opacity: 1;
+  transform: translateX(-0.5rem) scaleX(1.12);
 }
 
 .cia-quote-band p,
@@ -1087,7 +1150,7 @@ img {
 .cia-statement {
   padding: 2rem 0;
   background: var(--surface);
-  transition: background-color var(--motion-medium) var(--ease-standard);
+  transition: background-color var(--motion-medium) var(--ease-standard), color var(--motion-medium) var(--ease-standard);
 }
 
 .cia-statement:hover {
@@ -1096,6 +1159,11 @@ img {
 
 .cia-statement p {
   color: var(--primary);
+  transition: transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-statement:hover p {
+  transform: translateY(-1px);
 }
 
 .cia-timeline {
@@ -1383,6 +1451,13 @@ img {
   font-style: italic;
   line-height: 1.65;
   color: var(--text);
+  transition: background-color var(--motion-medium) var(--ease-standard), border-color var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-newsletter__opening-q:hover {
+  border-color: var(--primary);
+  background: rgb(212 184 150 / 0.14);
+  transform: translateY(-2px);
 }
 
 .cia-newsletter__opening-title {
