@@ -94,44 +94,20 @@ type LiquidButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> &
     asChild?: boolean;
   };
 
-function LiquidButton({
-  className,
-  variant,
-  size,
-  asChild = false,
-  children,
-  ...props
-}: LiquidButtonProps) {
-  if (asChild) {
-    const child = React.Children.toArray(children).find(
-      React.isValidElement,
-    ) as React.ReactElement<{
-      className?: string;
-      children?: React.ReactNode;
-    }> | undefined;
-
-    if (!child) {
-      return null;
-    }
-
-    return React.cloneElement(child, {
-      className: cn(
-        liquidbuttonVariants({ variant, size, className }),
-        child.props.className,
-      ),
-    });
-  }
-
-  return (
-    <button
-      data-slot="button"
-      className={cn(liquidbuttonVariants({ variant, size, className }))}
-      {...props}
-    >
-      {children}
-    </button>
-  );
-}
+const LiquidButton = React.forwardRef<HTMLButtonElement, LiquidButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        data-slot="button"
+        className={cn(liquidbuttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+LiquidButton.displayName = "LiquidButton";
 
 type ColorVariant =
   | "default"

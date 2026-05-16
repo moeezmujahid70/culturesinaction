@@ -14,35 +14,33 @@ const newsletterSpecs = [
 const kickstartSteps = [
   {
     number: "1.",
-    body: "Choose your team and team leader.",
+    heading: "Choose your team and team leader.",
+    body: "You select who’s involved. The team leader guides the process.",
   },
   {
     number: "2.",
-    body: "I email the team leader complete step by step details for managing the meeting(s).",
+    heading: "We get your team leader ready.",
+    body: "I send complete step-by-step guidance, then meet by Zoom to walk through everything together.",
   },
   {
     number: "3.",
-    body: "The team leader and I have a zoom meeting to go through the steps.",
+    heading: "Your team runs the session.",
+    body: "The team leader facilitates the structured process. I’m on standby via Zoom if you need me.",
   },
   {
     number: "4.",
-    body: "The team meets and goes through the step-by-step process. I am available on Zoom for help as needed.",
+    heading: "One person captures the output.",
+    body: "A team member records the decisions and data the team arrives at.",
   },
   {
     number: "5.",
-    body: "One team member records the data decided upon by the team.",
+    heading: "I build your COS.",
+    body: "Your team leader emails me the data. I configure your Culture Quest session and send back the access link.",
   },
   {
     number: "6.",
-    body: "What they collect is sent to me.",
-  },
-  {
-    number: "7.",
-    body: "I send the team leader the Culture Quest link to provide to all team members so they have access to the complete, online Culture Operating System they built.",
-  },
-  {
-    number: "8.",
-    body: "The team leader updates the COS contents for continuous improvements.",
+    heading: "Your team is live.",
+    body: "Every team member gets access to their Culture Operating System they built together.",
   },
 ];
 
@@ -51,6 +49,7 @@ const teamFit = [
   "Any function, including operations, sales, clinical, engineering, and administrative.",
   "Any level, from front-line teams to middle management and executive leadership.",
   "Any starting point, regardless of prior culture work history.",
+  "Any level of existing culture work from none to highly sophisticated.",
 ];
 
 const timeline = [
@@ -129,7 +128,7 @@ export default function Home() {
                 is a system to be operated. The goal of this work is to make
                 that system visible and actionable.
               </p>
-              <p className="cia-founder__name">Jerry</p>
+              <p className="cia-founder__name"><strong>Jerry Wagner</strong></p>
             </div>
           </div>
         </div>
@@ -206,14 +205,14 @@ export default function Home() {
             <div className="cia-kickstart-main">
               <p className="cia-eyebrow">Kickstart Program</p>
               <h2>
-                Launch Your Team&apos;s{" "}
-                <span>Culture Operating System (COS)</span> in Just Three
+                Your Teams&apos;{" "}
+                <span>Culture Operating System (COS)</span> in Four
                 Hours
               </h2>
               <p className="cia-body-lg">
                 The fastest, most affordable way to give your team the
-                foundation they need — an operational COS, done in 3 hours for
-                one meeting or 1.5 hours with two meeting times.
+                foundation they need — an operational COS, done in
+                two 2-hour meetings.
               </p>
 
               <div className="cia-kickstart-steps">
@@ -222,7 +221,7 @@ export default function Home() {
                   {kickstartSteps.map((step) => (
                     <li key={step.number}>
                       <span>{step.number}</span>
-                      <p>{step.body}</p>
+                      <p><strong>{step.heading}</strong> {step.body}</p>
                     </li>
                   ))}
                 </ol>
@@ -233,7 +232,7 @@ export default function Home() {
               <div className="cia-kickstart-investment">
                 <p>The Fee</p>
                 <strong>$199</strong>
-                <span>Culture Quest software included</span>
+                <span>Culture Quest software included.</span>
               </div>
 
               <div className="cia-panel cia-panel--kickstart">
@@ -248,8 +247,13 @@ export default function Home() {
               </div>
 
               <p className="cia-kickstart-tagline">
-                <strong>One team. Three hours.</strong>{" "}
+                <strong>One team. Four hours.</strong>{" "}
                 <em>A culture that runs on purpose.</em>
+              </p>
+              <p className="cia-kickstart-guarantee">
+                <strong>Guarantee:</strong> If you are not pleased with results
+                after the implementation, the fee is fully refunded and there is
+                no continuing obligation.
               </p>
             </aside>
           </div>
@@ -262,6 +266,39 @@ export default function Home() {
               one.&rdquo;
             </p>
             <span />
+          </div>
+
+          <div className="cia-kickstart-cta">
+            <h3 className="cia-kickstart-cta__heading">Ready to start a Kickstart?</h3>
+            <p className="cia-kickstart-cta__sub">Tell us about your team and we&rsquo;ll reach out to explore next steps.</p>
+            <form
+              className="cia-kickstart-form"
+              action="mailto:jerry.wagner@culturesinaction.net"
+              method="post"
+              encType="text/plain"
+            >
+              <div className="cia-kickstart-form__row">
+                <div className="cia-kickstart-form__field">
+                  <label htmlFor="ks-name">Name</label>
+                  <input id="ks-name" name="Name" type="text" placeholder="Your name" required />
+                </div>
+                <div className="cia-kickstart-form__field">
+                  <label htmlFor="ks-email">Email</label>
+                  <input id="ks-email" name="Email" type="email" placeholder="you@company.com" required />
+                </div>
+              </div>
+              <div className="cia-kickstart-form__field">
+                <label htmlFor="ks-company">Company</label>
+                <input id="ks-company" name="Company" type="text" placeholder="Your organization" />
+              </div>
+              <div className="cia-kickstart-form__field">
+                <label htmlFor="ks-message">Message</label>
+                <textarea id="ks-message" name="Message" rows={4} placeholder="What's on your mind?" />
+              </div>
+              <button type="submit" className="cia-kickstart-submit">
+                Start the Conversation
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -363,6 +400,16 @@ export default function Home() {
 
       <section className="cia-section cia-section--dark cia-section--center" id="action">
         <div className="cia-shell">
+          <figure className="cia-action-banner">
+            <Image
+              alt="So What Drill - Culture Operating Systems"
+              height={900}
+              src="/so_what_drill_banner.svg"
+              unoptimized
+              width={1600}
+            />
+          </figure>
+
           <div className="cia-section__intro cia-section__intro--center">
             <p className="cia-eyebrow">Get Started</p>
             <h2>Ready to Build a Culture That Works?</h2>
@@ -410,8 +457,8 @@ export default function Home() {
             </p>
           </div>
           <div className="cia-footer__links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <a>Privacy Policy</a>
+            <a>Terms of Service</a>
             <a href="mailto:jerry.wagner@culturesinaction.net">Contact Us</a>
           </div>
         </div>

@@ -30,17 +30,13 @@ export function ScrollReveal() {
       return;
     }
 
-    const elements = Array.from(
-      document.querySelectorAll<HTMLElement>(revealSelectors),
-    );
+    const processed = new Set<Element>();
+    const allElements: HTMLElement[] = [];
 
-    if (elements.length === 0) {
-      return;
-    }
+    function setupElement(element: HTMLElement, index: number) {
+      if (processed.has(element)) return;
+      processed.add(element);
 
-    document.body.classList.add("cia-motion-ready");
-
-    elements.forEach((element, index) => {
       element.classList.add("cia-reveal");
 
       if (
@@ -62,17 +58,23 @@ export function ScrollReveal() {
       ) {
         element.style.setProperty("--reveal-delay", `${(index % 5) * 110}ms`);
       }
-    });
+    }
 
-    const observer = new IntersectionObserver(
+    document.body.classList.add("cia-motion-ready");
+
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(revealSelectors),
+    );
+    elements.forEach((el, i) => setupElement(el, i));
+    allElements.push(...elements);
+
+    const intersectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (!entry.isIntersecting) {
-            return;
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            intersectionObserver.unobserve(entry.target);
           }
-
-          entry.target.classList.add("in-view");
-          observer.unobserve(entry.target);
         });
       },
       {
@@ -81,12 +83,39 @@ export function ScrollReveal() {
       },
     );
 
-    elements.forEach((element) => observer.observe(element));
+    elements.forEach((el) => intersectionObserver.observe(el));
+
+    const mutationObserver = new MutationObserver(() => {
+      const newElements = Array.from(
+        document.querySelectorAll<HTMLElement>(revealSelectors),
+      ).filter((el) => !processed.has(el));
+
+      if (newElements.length === 0) return;
+
+      newElements.forEach((el, i) => {
+        setupElement(el, allElements.length + i);
+        intersectionObserver.observe(el);
+      });
+      allElements.push(...newElements);
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    const onReducedMotionChange = (e: MediaQueryListEvent) => {
+      if (e.matches) {
+        document.body.classList.remove("cia-motion-ready");
+      }
+    };
+    prefersReducedMotion.addEventListener("change", onReducedMotionChange);
 
     return () => {
-      observer.disconnect();
+      intersectionObserver.disconnect();
+      mutationObserver.disconnect();
+      prefersReducedMotion.removeEventListener(
+        "change",
+        onReducedMotionChange,
+      );
       document.body.classList.remove("cia-motion-ready");
-      elements.forEach((element) => {
+      allElements.forEach((element) => {
         element.classList.remove("cia-reveal", "in-view");
         element.removeAttribute("data-reveal-variant");
         element.style.removeProperty("--reveal-delay");

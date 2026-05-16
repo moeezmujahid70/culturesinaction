@@ -770,25 +770,31 @@ img {
   color: var(--text);
 }
 
+.cia-kickstart-guarantee {
+  margin: 0;
+  padding-top: 1rem;
+  font-size: var(--text-base);
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 .cia-two-column {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(18rem, 0.9fr);
   gap: 2rem 4rem;
-  align-items: start;
+  align-items: stretch;
 }
 
 .cia-team-photo {
-  position: sticky;
-  top: 6rem;
   overflow: hidden;
-  min-height: clamp(24rem, 42vw, 34rem);
   margin: 0;
   border-radius: var(--radius);
   background:
     linear-gradient(180deg, transparent 42%, rgb(65 0 2 / 0.16)),
-    url("https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80") center / cover;
+    url("/warehouse meeting.jpeg") center / cover;
   box-shadow: var(--shadow-lift);
   transition: box-shadow var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis), filter var(--motion-medium) var(--ease-standard);
+  align-self: stretch;
 }
 
 .cia-team-photo:hover {
@@ -1116,6 +1122,108 @@ img {
   line-height: 1.45;
 }
 
+.cia-kickstart-cta {
+  margin-top: 3.5rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cia-kickstart-cta__heading {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--foreground);
+  margin: 0;
+  text-align: center;
+}
+
+.cia-kickstart-cta__sub {
+  font-size: var(--text-base);
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+  text-align: center;
+}
+
+.cia-kickstart-form {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cia-kickstart-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cia-kickstart-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.cia-kickstart-form__field label {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.cia-kickstart-form__field input,
+.cia-kickstart-form__field textarea {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: var(--text-base);
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--motion-fast) var(--ease-standard), box-shadow var(--motion-fast) var(--ease-standard);
+  resize: vertical;
+}
+
+.cia-kickstart-form__field input:focus,
+.cia-kickstart-form__field textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
+}
+
+.cia-kickstart-submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: var(--text-base);
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-emphasis);
+}
+
+.cia-kickstart-submit:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.cia-kickstart-submit:active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 540px) {
+  .cia-kickstart-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .cia-component-list {
   display: grid;
   gap: 1.15rem;
@@ -1290,6 +1398,28 @@ img {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
+}
+
+.cia-action-banner {
+  overflow: hidden;
+  width: min(100%, 58rem);
+  margin: 0 auto clamp(2.25rem, 5vw, 3.5rem);
+  border: 1px solid rgb(243 240 239 / 0.16);
+  border-radius: var(--radius);
+  background: rgb(255 255 255 / 0.04);
+  box-shadow: 0 18px 44px rgb(0 0 0 / 0.2);
+  transition: border-color var(--motion-medium) var(--ease-standard), box-shadow var(--motion-medium) var(--ease-standard), transform var(--motion-medium) var(--ease-emphasis);
+}
+
+.cia-action-banner:hover {
+  border-color: rgb(212 184 150 / 0.4);
+  box-shadow: 0 24px 54px rgb(0 0 0 / 0.26);
+  transform: translateY(-3px);
+}
+
+.cia-action-banner img {
+  width: 100%;
+  height: auto;
 }
 
 .cia-liquid-button {
