@@ -150,7 +150,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cia-section cia-section--tint" id="mission">
+      <section
+        className="cia-section cia-section--tint cia-section--mission"
+        id="mission"
+      >
         <div className="cia-shell cia-two-column">
           <div className="cia-stack">
             <p className="cia-eyebrow">Our Mission</p>
@@ -182,15 +185,23 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="cia-section cia-section--tint" id="framework">
+      <section
+        className="cia-section cia-section--tint cia-section--framework"
+        id="framework"
+      >
         <div className="cia-shell cia-framework">
           <div className="cia-section__intro cia-section__intro--narrow">
             <p className="cia-eyebrow">The Framework</p>
             <h2>What a Culture Operating System Is</h2>
-            <p className="cia-body-lg">
+            <p className="cia-body-lg cia-framework__lede">
               A Culture Operating System (COS) is the explicit, designed set of
-              rules and mechanisms that determine how a team operates day to
-              day.
+              rules and mechanisms that determine how a team is expected to
+              operate day to day.
+            </p>
+            <p className="cia-framework__software">
+              Culture Quest is the software platform for teams to build their
+              own unique COS. The complete COS resides online for all team
+              members to access and provide feedback.
             </p>
           </div>
 
@@ -248,7 +259,10 @@ export default function Home() {
               <div className="cia-kickstart-investment">
                 <p>The Fee</p>
                 <strong>$199</strong>
-                <span>Culture Quest software included.</span>
+                <span>
+                  Includes Culture Quest software, online help, and facilitator
+                  guide.
+                </span>
               </div>
 
               <div className="cia-panel cia-panel--kickstart">

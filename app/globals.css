@@ -254,6 +254,14 @@ img {
   background: var(--surface-tint);
 }
 
+.cia-section--mission {
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
+}
+
+.cia-section--framework {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+
 .cia-section--blue {
   background: var(--surface-blue);
 }
@@ -456,9 +464,9 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
   gap: 2.5rem;
-  min-height: clamp(36rem, 78vh, 48rem);
-  align-items: center;
-  padding: var(--section-space) 0;
+  min-height: clamp(32rem, calc(100svh - 5rem), 44rem);
+  align-items: start;
+  padding: clamp(2.5rem, 5vh, 4.5rem) 0 clamp(3.5rem, 7vh, 6rem);
 }
 
 .cia-hero__content {
@@ -832,11 +840,26 @@ img {
 
 .cia-framework {
   display: grid;
-  gap: clamp(2rem, 4vw, 3rem);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .cia-framework .cia-section__intro {
+  max-width: 72rem;
   margin-bottom: 0;
+}
+
+.cia-framework__lede {
+  font-size: clamp(0.98rem, 1.15vw, 1.06rem);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.cia-framework__software {
+  max-width: 70rem;
+  margin: 0.85rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--text-lg);
+  line-height: 1.55;
 }
 
 .cia-framework__figure {
@@ -866,6 +889,12 @@ img {
 
 .cia-framework__figure:hover img {
   transform: scale(1.012);
+}
+
+@media (min-width: 1440px) {
+  .cia-framework__lede {
+    white-space: nowrap;
+  }
 }
 
 .cia-stack > * + * {
