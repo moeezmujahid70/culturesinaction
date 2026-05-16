@@ -105,7 +105,21 @@ export default function Home() {
               <a href="#kickstart">Explore the Kickstart</a>
             </LiquidButton>
           </div>
-          <div className="cia-hero__media" aria-hidden="true" />
+          <div className="cia-hero__media">
+            <img
+              src="/hero.jpg"
+              alt=""
+              aria-hidden="true"
+              className="cia-hero__media-img"
+            />
+            <div className="cia-hero__media-overlays" aria-hidden="true" />
+            <div className="cia-hero__media-card">
+              <p className="cia-hero__media-eyebrow">The Culture Shift</p>
+              <p className="cia-hero__media-motto">
+                Stop settling for the culture you inherited. Design the one you want.
+              </p>
+            </div>
+          </div>
         </div>
       </header>
 
