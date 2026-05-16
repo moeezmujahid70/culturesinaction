@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { LiquidButton } from "@/components/ui/liquid-glass-button";
 import { Nav } from "@/components/nav";
+import { ContactModal } from "@/components/contact-modal";
+import { ContactButton } from "@/components/contact-button";
 
 const newsletterSpecs = [
   "Free, one-hour Zoom session.",
@@ -285,34 +287,13 @@ export default function Home() {
           <div className="cia-kickstart-cta">
             <h3 className="cia-kickstart-cta__heading">Ready to start a Kickstart?</h3>
             <p className="cia-kickstart-cta__sub">Tell us about your team and we&rsquo;ll reach out to explore next steps.</p>
-            <form
-              className="cia-kickstart-form"
-              action="mailto:jerry.wagner@culturesinaction.net"
-              method="post"
-              encType="text/plain"
+            <ContactButton
+              subject="Kickstart Inquiry"
+              size="xl"
+              className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--nav-strong"
             >
-              <div className="cia-kickstart-form__row">
-                <div className="cia-kickstart-form__field">
-                  <label htmlFor="ks-name">Name</label>
-                  <input id="ks-name" name="Name" type="text" placeholder="Your name" required />
-                </div>
-                <div className="cia-kickstart-form__field">
-                  <label htmlFor="ks-email">Email</label>
-                  <input id="ks-email" name="Email" type="email" placeholder="you@company.com" required />
-                </div>
-              </div>
-              <div className="cia-kickstart-form__field">
-                <label htmlFor="ks-company">Company</label>
-                <input id="ks-company" name="Company" type="text" placeholder="Your organization" />
-              </div>
-              <div className="cia-kickstart-form__field">
-                <label htmlFor="ks-message">Message</label>
-                <textarea id="ks-message" name="Message" rows={4} placeholder="What's on your mind?" />
-              </div>
-              <button type="submit" className="cia-kickstart-submit">
-                Start the Conversation
-              </button>
-            </form>
+              Start the Conversation
+            </ContactButton>
           </div>
         </div>
       </section>
@@ -388,14 +369,13 @@ export default function Home() {
                 challenging you?&rdquo;
               </blockquote>
 
-              <LiquidButton
-                asChild
-                className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--newsletter-cta"
+              <ContactButton
+                subject="Newsletter — Request an Invitation"
+                size="xl"
+                className="cia-liquid-button cia-liquid-button--nav cia-liquid-button--nav-strong cia-liquid-button--newsletter-cta"
               >
-                <a href="mailto:jerry.wagner@culturesinaction.net?subject=Zoom%3A%20Culture%20Breaks%20%E2%80%94%20Request%20an%20Invitation">
-                  Request an Invitation
-                </a>
-              </LiquidButton>
+                Request an Invitation
+              </ContactButton>
             </div>
 
             <aside className="cia-newsletter__specs">
@@ -414,16 +394,6 @@ export default function Home() {
 
       <section className="cia-section cia-section--dark cia-section--center" id="action">
         <div className="cia-shell">
-          <figure className="cia-action-banner">
-            <Image
-              alt="So What Drill - Culture Operating Systems"
-              height={900}
-              src="/so_what_drill_banner.svg"
-              unoptimized
-              width={1600}
-            />
-          </figure>
-
           <div className="cia-section__intro cia-section__intro--center">
             <p className="cia-eyebrow">Get Started</p>
             <h2>Ready to Build a Culture That Works?</h2>
@@ -446,15 +416,13 @@ export default function Home() {
                 Explore Culture Quest Software
               </a>
             </LiquidButton>
-            <LiquidButton
-              asChild
-              className="cia-liquid-button cia-liquid-button--dark cia-liquid-button--dark-secondary"
+            <ContactButton
+              subject="Send Jerry Wagner a Note"
               size="xl"
+              className="cia-liquid-button cia-liquid-button--dark cia-liquid-button--dark-secondary"
             >
-              <a href="mailto:jerry.wagner@culturesinaction.net">
-                Contact Jerry Wagner
-              </a>
-            </LiquidButton>
+              Send Jerry Wagner a Note
+            </ContactButton>
           </div>
           <p className="cia-contact-line">
             JERRY.WAGNER@CULTURESINACTION.NET · CULTURESINACTION.NET
@@ -470,6 +438,15 @@ export default function Home() {
               © 2026 Cultures in Action. Surgical Precision Consulting.
             </p>
           </div>
+          <figure className="cia-footer__badge">
+            <Image
+              alt="So What Drill - Culture Operating Systems"
+              height={225}
+              src="/so_what_drill_banner.svg"
+              unoptimized
+              width={400}
+            />
+          </figure>
           <div className="cia-footer__links">
             <a>Privacy Policy</a>
             <a>Terms of Service</a>
@@ -477,6 +454,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      <ContactModal />
     </main>
   );
 }
