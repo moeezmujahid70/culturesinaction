@@ -858,8 +858,8 @@ img {
   max-width: 70rem;
   margin: 0.85rem 0 0;
   color: var(--text-muted);
-  font-size: var(--text-lg);
-  line-height: 1.55;
+  font-size: clamp(0.98rem, 1.15vw, 1.06rem);
+  line-height: 1.5;
 }
 
 .cia-framework__figure {
