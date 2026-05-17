@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+culturequest-mail-config.php
 
 # debug
 npm-debug.log*

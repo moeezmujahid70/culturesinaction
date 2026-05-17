@@ -9,7 +9,8 @@
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "zip:bluehost": "rm -f bluehost-static-site.zip && cd out && zip -rq ../bluehost-static-site.zip ."
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.4",

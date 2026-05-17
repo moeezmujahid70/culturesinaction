@@ -1988,6 +1988,14 @@ img {
   gap: 0.875rem;
 }
 
+.cia-modal__honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .cia-modal__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2026,6 +2034,27 @@ img {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 15%, transparent);
 }
 
+.cia-modal__status {
+  margin: 0.125rem 0 0;
+  padding: 0.75rem 0.875rem;
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+  line-height: 1.45;
+}
+
+.cia-modal__status--success {
+  border: 1px solid rgb(0 90 67 / 0.22);
+  background: rgb(0 90 67 / 0.08);
+  color: var(--green);
+  font-weight: 700;
+}
+
+.cia-modal__status--error {
+  border: 1px solid rgb(107 20 20 / 0.22);
+  background: rgb(107 20 20 / 0.08);
+  color: var(--primary);
+}
+
 .cia-modal__submit {
   margin-top: 0.5rem;
   padding: 0.75rem 1.75rem;
@@ -2039,6 +2068,11 @@ img {
   cursor: pointer;
   align-self: flex-start;
   transition: opacity var(--motion-fast) var(--ease-standard), transform var(--motion-fast) var(--ease-emphasis);
+}
+
+.cia-modal__submit:disabled {
+  cursor: wait;
+  opacity: 0.68;
 }
 
 .cia-modal__submit:hover {
